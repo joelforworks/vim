@@ -4,77 +4,77 @@ set mouse=a
 set numberwidth=1
 syntax on 
 set guioptions-=r
-set guioptions=ace
+set guioptions=Ace
 set encoding=utf-8
 set relativenumber
 set nocompatible
-"" visual block
+"" Visual block
 nnoremap q <c-v>
 "" tabs
 :map tn :tabnew<cr>
 
-if system('uname -s') == "darwin\n"
-  set clipboard=unnamed "osx
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
 else
-  set clipboard=unnamedplus "linux
+  set clipboard=unnamedplus "Linux
 endif
 
 
 
 
-:imap ii <esc>
+:imap ii <ESC>
 let g:pymode_python = 'python3'
 
 
 call plug#begin()
 " navigate
-plug 'preservim/nerdtree'
+Plug 'preservim/NERDTree'
 " systax color
-plug 'sheerun/vim-polyglot'
-plug 'vim-python/python-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-python/python-syntax'
 " status bar
-plug 'vim-airline/vim-airline'
-" html xml 
-plug 'mattn/emmet-vim'
+Plug 'vim-airline/vim-airline'
+" HTML XML 
+Plug 'mattn/emmet-vim'
 " themes
-plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', { 'as': 'dracula' }
 
-plug 'tomasiser/vim-code-dark'
+Plug 'tomasiser/vim-code-dark'
 
-plug 'rakr/vim-one'
+Plug 'rakr/vim-one'
 
-plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
-plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 
 
 " autocompletation
-" plug 'lifepillar/vim-mucomplete'
+" Plug 'lifepillar/vim-mucomplete'
 
-plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " fzf
-plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " floatterm
-plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm'
 " jedi 
 
-plug 'davidhalter/jedi-vim'
-" vdebuger
-plug 'vim-vdebug/vdebug'
+Plug 'davidhalter/jedi-vim'
+" Vdebuger
+Plug 'vim-vdebug/vdebug'
 
 call plug#end()
 
 " nerdtree maps
-:map <space>n :nerdtreefind<cr>
-:map <space>m :nerdtreetoggle %<cr> 
+:map <Space>n :NERDTreeFind<cr>
+:map <Space>m :NERDTreeToggle %<CR> 
 " status bar
-:let g:airline_section_z = airline#section#create(['%3p%% %l:%3v']) 
+:let g:airline_section_z = airline#section#create(['%3p%% %L:%3v']) 
 " emmet-vim
 :let g:user_emmet_leader_key = ','
 " floaterm
-:hi floaterm guibg=black
+:hi Floaterm guibg=black
 " themes
 
 " dracula
@@ -87,12 +87,12 @@ colorscheme gruvbox
  
 
  "colorscheme one
-" call one#highlight('comment', '8f8f8f', '', 'none')
+" call one#highlight('Comment', '8F8F8F', '', 'none')
 "" colorscheme codedark
 
-" transparent background dracula and one theme
+" Transparent background dracula and one theme
 
- autocmd vimenter * hi normal guibg=none ctermbg=none
+ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
 
 " maps
@@ -109,26 +109,26 @@ let g:syntastic_python_python_exec = 'python3'
 set splitbelow
 set splitright
 
-:map <c-j> <c-w>j
-:map <c-k> <c-w>k
-:map <c-h> <c-w>h
-:map <c-l> <c-w>l
+:map <C-j> <C-W>j
+:map <C-k> <C-W>k
+:map <C-h> <C-W>h
+:map <C-l> <C-W>l
 
 "" fzf
 
-:map ,f :files<cr>
-:map ,w :ag<cr>
+:map ,f :Files<CR>
+:map ,w :Ag<CR>
 
-" java 
+" JAVA 
 
 
-" autocompletation
+" Autocompletation
 
 set completeopt-=preview
 set completeopt+=longest,menuone,noinsert
 let g:mucomplete#enable_auto_at_startup = 1
 let g:mucomplete#always_use_completeopt = 1
-let g:jedi#popup_on_dot = 0  " it may be 1 as well
+let g:jedi#popup_on_dot = 0  " It may be 1 as well
 let g:mucomplete#user_mappings = { 'sqla' : "\<c-c>a" }
 let g:mucomplete#chains = { 'sql' : ['file', 'sqla', 'keyn'] }
 set shortmess+=c
@@ -136,8 +136,8 @@ set shortmess+=c
 "let g:loaded_sql_completion = 0
 "let g:omni_sql_default_compl_type = 'syntax'
 "let g:omni_sql_no_default_maps = 1
-"let g:ftplugin_sql_omni_key = '<leader>sql'
-"let g:ftplugin_sql_omni_key = '<plug>disablesqlomni'
+"let g:ftplugin_sql_omni_key = '<Leader>sql'
+"let g:ftplugin_sql_omni_key = '<Plug>DisableSqlOmni'
 
 "filetype plugin off
 "set omnifunc=
@@ -146,24 +146,24 @@ set shortmess+=c
 
 " floaterm
 let g:floaterm_keymap_toggle = ',t'
-let g:floaterm_keymap_next   = ',<tab>'
+let g:floaterm_keymap_next   = ',<Tab>'
 let g:floaterm_keymap_new    = ',nt'
-map ,t :floatermnew! cd %:p:h <cr>clear<cr>
+map ,T :FloatermNew! cd %:p:h <CR>clear<CR>
 
 """"""""""""""
-" coc config
+" CoC Config
 """"""""""""""
-" use tab for trigger completion with characters ahead and navigate.
-" note: use command ':verbose imap <tab>' to make sure tab is not mapped by
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 let g:coc_node_path = '/usr/local/bin/node'
 
-inoremap <silent><expr> <tab>
-      \ pumvisible() ? "\<c-n>" :
-      \ <sid>check_back_space() ? "\<tab>" :
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-"inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " the <tab> could be remapped by another plugin, use :verbose imap <tab> to
 " check if it's mapped as expected
@@ -174,55 +174,56 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" make <cr> auto-select the first completion item and notify coc.nvim to
+" Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" use k to show documentation in preview window.
-nnoremap <silent> k :call <sid>show_documentation()<cr>
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   elseif (coc#rpc#ready())
-    call cocactionasync('dohover')
+    call CocActionAsync('doHover')
   else
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
-" use `[g` and `]g` to navigate diagnostics
-" use `:cocdiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <plug>(coc-diagnostic-prev)
-nmap <silent> ]g <plug>(coc-diagnostic-next)
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 
 " css 
 
-autocmd filetype scss setl iskeyword+=@-@
+autocmd FileType scss setl iskeyword+=@-@
 " multicursor
 let g:multi_cursor_use_default_mapping=0
 
-" default mapping
-let g:multi_cursor_start_word_key      = '<c-n>'
-let g:multi_cursor_select_all_word_key = '<a-n>'
-let g:multi_cursor_start_key           = 'g<c-n>'
-let g:multi_cursor_select_all_key      = 'g<a-n>'
-let g:multi_cursor_next_key            = '<c-n>'
-let g:multi_cursor_prev_key            = '<c-p>'
-let g:multi_cursor_skip_key            = '<c-x>'
-let g:multi_cursor_quit_key            = '<esc>'
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 
-" vdebuger
+" Vdebuger
 
 let g:vdebug_options = {
 \  'port':9003,
 \  'server':'localhost',
 \  'break_on_open' : 0,
-\  'ide_key' : 'vvvdebug'
+\  'ide_key' : 'VVVDEBUG'
 \}
 
-" laravel
+" Laravel
 
-au filetype php,blade let b:coc_root_patterns = ['.git', '.env', 'composer.json', 'artisan']
+au FileType php,blade let b:coc_root_patterns = ['.git', '.env', 'composer.json', 'artisan']
+
