@@ -226,5 +226,3 @@ let g:vdebug_options = {
 " laravel
 
 au filetype php,blade let b:coc_root_patterns = ['.git', '.env', 'composer.json', 'artisan']
-
-
